@@ -33,7 +33,7 @@
                     </span>
                 </p>
                 <div>
-                    <a href="https://news-365-server.vercel.app/news/${{ news._id }}" class=" text-blue-500">Read more</a>
+                    <NuxtLink :to="`/news/${news._id}`" class=" text-blue-500">Read more</NuxtLink>
 
                 </div>
                 <div class="flex flex-row justify-between items-center border-t-2">
