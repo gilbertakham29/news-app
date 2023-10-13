@@ -3,7 +3,7 @@
       <template>
     <div class="col-span-1">
             <h2 class="text-3xl text-black font-normal">Home news: 26</h2>
-            <div class="  w-fit bg-white border border-gray-200 rounded-lg"  v-for="news in newsArticles" :key="news._id">
+            <div class=" mb-4 p-3 w-fit bg-white border border-gray-200 rounded-lg"  v-for="news in newsArticles" :key="news._id">
                 <div class="flex flex-row justify-between items-center">
                     <div class="flex flex-row justify-between items-center p-2">
                         <img class="border rounded-full h-16 w-16" :src=" news.author.img " alt="person">
@@ -33,7 +33,7 @@
                     </span>
                 </p>
                 <div>
-                    <NuxtLink :to="`/news/${news._id}`" class=" text-blue-500">Read more</NuxtLink>
+                    <NuxtLink :to="`/news/${news._id}`" class="text-blue-500">Read more</NuxtLink>
 
                 </div>
                 <div class="flex flex-row justify-between items-center border-t-2">
@@ -74,7 +74,6 @@ export default{
     methods:{
         
         fetchNews(){
-            const {id} = useRoute().params
             const apiUrl = 'https://news-365-server.vercel.app/news/'
             axios.get(apiUrl).then(response => this.newsArticles = response.data)
             .catch(error => {

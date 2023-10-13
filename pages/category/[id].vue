@@ -2,8 +2,8 @@
 
      <div class="col-span-1" >
       <div>
-            <h2 class="text-3xl text-black font-normal">This is category :   </h2>
-            <div class="  w-fit bg-white border border-gray-200 rounded-lg" v-for="news in categoryNews" :key="news._id">
+            <h2 class="text-3xl text-black font-normal">This is category :  </h2>
+            <div class=" mb-4 p-3  w-fit bg-white border border-gray-200 rounded-lg" v-for="news in categoryNews" :key="news._id">
                 <div class="flex flex-row justify-between items-center">
                     <div class="flex flex-row justify-between items-center p-2">
                        <img class="border rounded-full h-16 w-16" :src=" news.author.img " alt="person">
@@ -85,7 +85,7 @@ export default{
       axios.get(newsItemUrl).then(response => this.categoryNews = response.data).catch(error => {
         console.error('Error fetching news:', error);
       })
-    
+      
         },
         
     }
