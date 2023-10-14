@@ -2,7 +2,7 @@
 
      <div class="col-span-1" >
       <div>
-            <h2 class="text-3xl text-black font-normal">This is category :  </h2>
+            <h2 class="text-3xl text-black font-normal">This Is Category: {{categoryId}}</h2>
             <div class=" mb-4 p-3  w-fit bg-white border border-gray-200 rounded-lg" v-for="news in categoryNews" :key="news._id">
                 <div class="flex flex-row justify-between items-center">
                     <div class="flex flex-row justify-between items-center p-2">
@@ -68,7 +68,7 @@ export default{
         return{
             
             categoryNews:[],
-            
+            categoryId:null
             
         }
     },
@@ -85,9 +85,10 @@ export default{
       axios.get(newsItemUrl).then(response => this.categoryNews = response.data).catch(error => {
         console.error('Error fetching news:', error);
       })
-      
+      this.categoryId = this.$route.params.id
         },
-        
+
+       
     }
 }
 </script>
